@@ -4,7 +4,7 @@ using UnityEngine;
 public class Beak : MonoBehaviour
 {
     [SerializeField] float maxBeakAngle = 10f;
-    [SerializeField] private float beakClosedAngle = 4f;
+    [SerializeField] private float beakClosedAngle = 2f;
     [SerializeField] private float beakVelocity = 0.1f;
     [SerializeField] private float topBeakRotation = 0f;
     [SerializeField] private float bottomBeakRotation = 0f;
