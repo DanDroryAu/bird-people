@@ -43,7 +43,6 @@ public class HeadMovement : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (plane.Raycast(ray, out distance)){
             worldPosition = ray.GetPoint(distance);
-            transform.position = worldPosition;
         }
             
         // head rotates with mouse
@@ -58,6 +57,7 @@ public class HeadMovement : MonoBehaviour
             // allowing roll/tilt of head
             transform.localEulerAngles = new Vector3(-verticalRotation, horizontalRotation, -horizontalRotation);  
 
+            Debug.Log(verticalMouse);
             // head goes down to pick up trash
             transform.position += new Vector3(horizontalMouse * 2f, -verticalMouse * 5f, verticalMouse * 8f);
         } 
