@@ -2,30 +2,23 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Beak : MonoBehaviour
+public class WholeAssBeak : MonoBehaviour
 {
     [SerializeField] float maxBeakAngle = 10f;
     [SerializeField] private float beakClosedAngle = 2f;
     [SerializeField] private float beakVelocity = 0.1f;
-    [SerializeField] private float topBeakRotation = 0f;
-    [SerializeField] private float bottomBeakRotation = 0f;
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] private float rotateSpeed = 100f;
+    
     [SerializeField] private Transform topBeak;
     [SerializeField] private Transform bottomBeak;
+    
+    [SerializeField] private Transform topBase;
+    [SerializeField] private Transform topTip;
+    [SerializeField] private Transform bottomBase;
+    [SerializeField] private Transform bottomTip;
 
-    public float GetAngleDiff(float topAngle, float bottomAngle)
-    {
-        float normalizedTopAngle = Math.Abs(topAngle);
-        float normalizedBottomAngle = Math.Abs(bottomAngle);
-        if (topAngle < 0 || bottomAngle < 0)
-        {
-            return normalizedTopAngle + normalizedBottomAngle;
-        }
-
-        return Math.Abs(normalizedTopAngle - normalizedBottomAngle);
-    }
-
+    
 // Start is called before the first frame update
     void Start()
     {
@@ -41,13 +34,13 @@ public class Beak : MonoBehaviour
             float verticalVelocity = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;;
             transform.Rotate(0,-horizontalVelocity, 0);
             transform.Translate(0, verticalVelocity,0 );
+
+            Vector3 topBeakVector = topBase.position - topTip.position;
+            Vector3 bottomBeakVector = bottomBase.position - bottomTip.position;
             
-            
-            topBeakRotation = topBeak.rotation.eulerAngles.z;
-            bottomBeakRotation = bottomBeak.rotation.eulerAngles.z;
-            
-            float angleDiff = GetAngleDiff(topBeakRotation, bottomBeakRotation);
-            Debug.Log(angleDiff);
+            Debug.Log(Vector3.Angle(topBeakVector, bottomBeakVector));
+
+            float angleDiff = Vector3.Angle(topBeakVector, bottomBeakVector);
             if (Input.GetMouseButton(0))
             {
                 if(angleDiff >= beakClosedAngle) {
