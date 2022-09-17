@@ -14,19 +14,19 @@ public class Rotisserie : MonoBehaviour
     void Update()
     {
         if (Input.GetKey(KeyCode.A)) {
-            this.transform.Rotate(new Vector3(1, 0, 0));
+            this.transform.Rotate(new Vector3(.2f, 0, 0));
         }
         
         if (Input.GetKey(KeyCode.D)) {
-            this.transform.Rotate(new Vector3(-1, 0, 0));
+            this.transform.Rotate(new Vector3(-.2f, 0, 0));
         }
         
         if (Input.GetKey(KeyCode.W)) {
-            this.transform.Rotate(new Vector3(0, 1, 0));
+            this.transform.Rotate(new Vector3(0, .2f, 0));
         }
         
         if (Input.GetKey(KeyCode.S)) {
-            this.transform.Rotate(new Vector3(0, -1, 0));
+            this.transform.Rotate(new Vector3(0, -.2f, 0));
         }
     }
 }
