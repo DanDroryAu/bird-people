@@ -37,8 +37,6 @@ public class WholeAssBeak : MonoBehaviour
 
             Vector3 topBeakVector = topBase.position - topTip.position;
             Vector3 bottomBeakVector = bottomBase.position - bottomTip.position;
-            
-            Debug.Log(Vector3.Angle(topBeakVector, bottomBeakVector));
 
             float angleDiff = Vector3.Angle(topBeakVector, bottomBeakVector);
             if (Input.GetMouseButton(0))
