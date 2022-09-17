@@ -17,7 +17,7 @@ public class BeakCollider : MonoBehaviour
         if (Input.GetMouseButtonUp(0) && myPrecious != null)
         {
             Debug.Log("You dropped your precious trash");
-            myPrecious.transform.SetParent(null);
+            myPrecious.transform.SetParent(trashCan);
             myPrecious.GetComponent<Rigidbody>().isKinematic = false;
         }
 
