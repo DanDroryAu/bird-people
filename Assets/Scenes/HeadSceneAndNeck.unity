@@ -516,18 +516,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 970496775}
---- !u!114 &1329687212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1329687209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e5b5f62743e1e143a33ef0dc5a9d669, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1430208470 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6905609870639353253, guid: 0f17220ab3686432a8e7cf88bd1f94c5, type: 3}
@@ -595,6 +583,14 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0f17220ab3686432a8e7cf88bd1f94c5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2639638324218457063, guid: 0f17220ab3686432a8e7cf88bd1f94c5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2639638324218457063, guid: 0f17220ab3686432a8e7cf88bd1f94c5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -2639638324218457063, guid: 0f17220ab3686432a8e7cf88bd1f94c5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1016,7 +1012,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   neckStartingPos: {fileID: 1430208470}
   neckAttachmentPos: {fileID: 871477630}
+  neckEndPos: {fileID: 1432572077}
   NeckBones:
   - {fileID: 1430208470}
-  - {fileID: 1329687209}
-  maxNeckLength: 3
+  canStretch: 1
+  maxNeckLength: 2.6
