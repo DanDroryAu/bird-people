@@ -141,6 +141,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 676466840}
+--- !u!4 &247776057 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1709131692292805796, guid: 97ca58ea0391b334f91705e505729db4, type: 3}
+  m_PrefabInstance: {fileID: 1802118269}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &358716688 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7036213049465896255, guid: 97ca58ea0391b334f91705e505729db4, type: 3}
@@ -165,6 +170,7 @@ MonoBehaviour:
   - {fileID: 802759598}
   - {fileID: 151313236}
   - {fileID: 1779784290}
+  stretchForce: 3
   canStretch: 1
   maxNeckLength: 5
 --- !u!1 &676466839
@@ -453,6 +459,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1386814226 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4994254101198997727, guid: 97ca58ea0391b334f91705e505729db4, type: 3}
+  m_PrefabInstance: {fileID: 1802118269}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1441203076 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6905609870639353253, guid: 97ca58ea0391b334f91705e505729db4, type: 3}
@@ -476,7 +487,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   head: {fileID: 2120508199}
-  headSpeed: 10
+  headSpeed: 3
+  lowAngle: 310
+  highAngle: 220
+--- !u!4 &1453245869 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -3138587384323247884, guid: 97ca58ea0391b334f91705e505729db4, type: 3}
+  m_PrefabInstance: {fileID: 1802118269}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1526234184
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,7 +617,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1527190690}
   m_LocalRotation: {x: -0.00031119576, y: 0.91521347, z: 0.40296933, w: -0.00022131202}
-  m_LocalPosition: {x: 0.005217269, y: 0.018548593, z: 0.0033366033}
+  m_LocalPosition: {x: 0.00522, y: 0.00809, z: 0.00045}
   m_LocalScale: {x: 0.0036986473, y: 0.0036986477, z: 0.0036986463}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -683,12 +701,25 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0a8c114987a9a594d9afaeb54b9f9f9e, type: 2}
+    - target: {fileID: 7427130580264361697, guid: 97ca58ea0391b334f91705e505729db4, type: 3}
+      propertyPath: m_Name
+      value: BottomBeak
+      objectReference: {fileID: 0}
     - target: {fileID: 8114745447763574566, guid: 97ca58ea0391b334f91705e505729db4, type: 3}
       propertyPath: m_Name
       value: HeadRoot
       objectReference: {fileID: 0}
+    - target: {fileID: 8718660895546402288, guid: 97ca58ea0391b334f91705e505729db4, type: 3}
+      propertyPath: m_Name
+      value: TopBeak
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97ca58ea0391b334f91705e505729db4, type: 3}
+--- !u!4 &2025495410 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -3237813544945979739, guid: 97ca58ea0391b334f91705e505729db4, type: 3}
+  m_PrefabInstance: {fileID: 1802118269}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2120508198 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8114745447763574566, guid: 97ca58ea0391b334f91705e505729db4, type: 3}
@@ -720,8 +751,31 @@ MonoBehaviour:
   worldPosition: {x: 0, y: 0, z: 0}
   headMovementSpeed: 80
   previousMousePos: {x: 0, y: 0}
-  maxHeadDistance: 5
+  maxHeadDistance: 4
   elapsedTime: 0
   startDelay: 2
   headStartingPos: {fileID: 1527190691}
   axes: 0
+--- !u!114 &2120508201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120508198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddccada4926f04d26b379b80adcea709, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxBeakAngle: 40
+  beakClosedAngle: 14
+  beakVelocity: 1.5
+  moveSpeed: 10
+  rotateSpeed: 100
+  topBeak: {fileID: 247776057}
+  bottomBeak: {fileID: 1386814226}
+  topBase: {fileID: 247776057}
+  topTip: {fileID: 2025495410}
+  bottomBase: {fileID: 1386814226}
+  bottomTip: {fileID: 1453245869}
