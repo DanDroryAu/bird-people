@@ -2173,6 +2173,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 842ba013480ce6f4e82030aeaf894fda, type: 3}
+--- !u!114 &772715552 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1487930908232139900, guid: 6d08da4fd47908944bc4fb17827f575e, type: 3}
+  m_PrefabInstance: {fileID: 1866983133}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &785334677 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3fa23864e3d6b2145a1bab03f764b4f8, type: 3}
@@ -5111,6 +5122,10 @@ PrefabInstance:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 599196781}
+    - target: {fileID: 6055889644246306153, guid: 7d50217c48de3b443ba35b81d7b19042, type: 3}
+      propertyPath: timeUpText
+      value: 
+      objectReference: {fileID: 772715552}
     - target: {fileID: 6055889644246306153, guid: 7d50217c48de3b443ba35b81d7b19042, type: 3}
       propertyPath: timeRemaining
       value: 5

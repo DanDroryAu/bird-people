@@ -49,6 +49,7 @@ public class GameManager: MonoBehaviour {
       timeText = GameObject.Find("Time").GetComponent<TMP_Text>();
       timeUpText = GameObject.Find("TimeUp").GetComponent<TMP_Text>();
       timeUpObj = GameObject.Find("TimeUp");
+      timeUpObj.SetActive(false);
  
     }
   }
@@ -57,7 +58,6 @@ public class GameManager: MonoBehaviour {
     sceneController = FindObjectOfType<SceneController>();
     scoreText.text = "";
     timeText.text = "";
-    timeUpObj.SetActive(false);
   }
 
   void Update() {
@@ -86,7 +86,7 @@ public class GameManager: MonoBehaviour {
 
   }
 
-      IEnumerator ShowTimeIsUp()
+    IEnumerator ShowTimeIsUp()
     {
        timeUpObj.SetActive(true);
        EventManager.TriggerEvent(AudioEventName.PlayTimeIsUp);
