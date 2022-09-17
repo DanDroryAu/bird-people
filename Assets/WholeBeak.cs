@@ -2,7 +2,7 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class WholeAssBeak : MonoBehaviour
+public class WholeBeak : MonoBehaviour
 {
     [SerializeField] float maxBeakAngle = 10f;
     [SerializeField] private float beakClosedAngle = 2f;
@@ -37,10 +37,9 @@ public class WholeAssBeak : MonoBehaviour
 
             Vector3 topBeakVector = topBase.position - topTip.position;
             Vector3 bottomBeakVector = bottomBase.position - bottomTip.position;
-            
-            Debug.Log(Vector3.Angle(topBeakVector, bottomBeakVector));
 
             float angleDiff = Vector3.Angle(topBeakVector, bottomBeakVector);
+            Debug.Log(angleDiff);
             if (Input.GetMouseButton(0))
             {
                 if(angleDiff >= beakClosedAngle) {
