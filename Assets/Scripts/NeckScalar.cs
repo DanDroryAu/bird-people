@@ -9,6 +9,7 @@ public class NeckScalar : MonoBehaviour
     public GameObject neckAttachmentPos;
     public GameObject neckEndPos;
     public GameObject[] NeckBones;
+    public float stretchForce;
     public bool canStretch = true;
 
     public float maxNeckLength;
@@ -27,7 +28,8 @@ public class NeckScalar : MonoBehaviour
         if (currentDistance > maxNeckLength && canStretch) {
             foreach(GameObject bone in NeckBones)
             {
-                bone.transform.localScale = new Vector3(maxNeckLength / currentDistance, currentDistance / maxNeckLength, maxNeckLength / currentDistance);
+                float extra = (currentDistance - maxNeckLength) / stretchForce;
+                bone.transform.localScale = new Vector3(maxNeckLength / (maxNeckLength + extra), currentDistance / maxNeckLength, maxNeckLength / (maxNeckLength + extra));
             }
         }
     }

@@ -20,7 +20,7 @@ public class Gullet : MonoBehaviour
     {
         if (other.tag == "Trash")
         {
-            Destroy(other);
+            Destroy(other.gameObject);
             Debug.Log("VICTORY SCREECH");
             
         }

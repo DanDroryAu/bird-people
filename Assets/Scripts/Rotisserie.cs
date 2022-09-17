@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Rotisserie : MonoBehaviour
 {
+
+    public Transform head;
+    public float headSpeed;
+    public float lowAngle;
+    public float highAngle;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,20 +18,25 @@ public class Rotisserie : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.A)) {
-            this.transform.Rotate(new Vector3(.2f, 0, 0));
-        }
-        
-        if (Input.GetKey(KeyCode.D)) {
+
+        Debug.Log(this.transform.localRotation.eulerAngles.y);
+
+        if (Input.GetKey(KeyCode.W) && this.transform.localRotation.eulerAngles.y <= lowAngle) {
             this.transform.Rotate(new Vector3(-.2f, 0, 0));
+            head.Translate(Vector3.down * Time.deltaTime * headSpeed, Space.World);
         }
         
-        if (Input.GetKey(KeyCode.W)) {
-            this.transform.Rotate(new Vector3(0, .2f, 0));
+        if (Input.GetKey(KeyCode.S)  && this.transform.localRotation.eulerAngles.y >= highAngle) {
+            this.transform.Rotate(new Vector3(.2f, 0, 0));
+            head.Translate(Vector3.up * Time.deltaTime * headSpeed, Space.World);
         }
         
-        if (Input.GetKey(KeyCode.S)) {
-            this.transform.Rotate(new Vector3(0, -.2f, 0));
-        }
+        // if (Input.GetKey(KeyCode.A)) {
+        //     this.transform.Rotate(new Vector3(0, -.2f, 0));
+        // }
+        
+        // if (Input.GetKey(KeyCode.D)) {
+        //     this.transform.Rotate(new Vector3(0, .2f, 0));
+        // }
     }
 }
