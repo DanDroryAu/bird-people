@@ -16,7 +16,7 @@ public class SceneController : MonoBehaviour
 
 	public void LoadGameStart(){
 		Debug.Log("Loading Game Start");
-		SceneManager.LoadScene("Environment");
+		SceneManager.LoadScene("WheelyBinLevel");
 		gameManager.StartGame();
 	}
 
