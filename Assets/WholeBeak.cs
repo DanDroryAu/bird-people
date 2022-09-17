@@ -43,15 +43,15 @@ public class WholeBeak : MonoBehaviour
             if (Input.GetMouseButton(0))
             {
                 if(angleDiff >= beakClosedAngle) {
-                    topBeak.Rotate(0, 0, -beakVelocity);
-                    bottomBeak.Rotate(0, 0, beakVelocity);
+                    topBeak.Rotate(-beakVelocity, 0, 0);
+                    bottomBeak.Rotate(beakVelocity, 0, 0);
                 }
             }
             else if (!Input.GetMouseButton(0))
             {
                 if (angleDiff <= maxBeakAngle) {
-                    topBeak.Rotate(0, 0, beakVelocity);
-                    bottomBeak.Rotate(0, 0, -beakVelocity);
+                    topBeak.Rotate(beakVelocity, 0, 0);
+                    bottomBeak.Rotate(-beakVelocity, 0, 0);
                 }
             }
 

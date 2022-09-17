@@ -23,9 +23,6 @@ public class NeckScalar : MonoBehaviour
     void Update()
     {
         float currentDistance = Vector3.Distance(neckStartingPos.transform.position, neckAttachmentPos.transform.position);
-        Debug.Log(Vector3.Distance(neckStartingPos.transform.position, neckEndPos.transform.position));
-
-        Debug.Log(currentDistance);
 
         if (currentDistance > maxNeckLength && canStretch) {
             foreach(GameObject bone in NeckBones)
