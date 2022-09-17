@@ -3,77 +3,96 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class GameManager : MonoBehaviour
-{
+public class GameManager: MonoBehaviour {
+  bool gamePlaying = false;
+  SceneController sceneController;
 
-public static GameManager Instance {
-	get; private set;
-}
+  public static GameManager Instance {
+    get;
+    private set;
+  }
+  [SerializeField] TMP_Text timeText;
+  [SerializeField] TMP_Text scoreText;
 
+  // int Score = 0;
+  [SerializeField] float timeRemaining;
+  int score = 0;
 
-//check and delete itself if it exists
-void Awake() {
-	if(Instance != null && Instance != this) {
-		Destroy(this);
-	}
-	else {
-		Instance = this;
-	}
-}
-	
+  //check and delete itself if it exists
+  void Awake() {
+    if (Instance != null && Instance != this) {
+      Destroy(this);
+    } else {
+      Instance = this;
+    }
+  } 
 
-	[SerializeField] TMP_Text timeText;
-	[SerializeField] TMP_Text scoreText;
+  private void Start() {
+	sceneController = FindObjectOfType<SceneController>();
+	scoreText.text = "";
+	timeText.text = "";
+  }
 
-	// int Score = 0;
-	float timeRemaining = 60f;
-	
-
-    // Start is called before the first frame update
-    void Start()
-    {
-		// Set the text test
-		timeText.text = "Time" ;
-		scoreText.text = "Score test";
+  void Update() {
+    if (gamePlaying) {
+      Raycast();
+      if (timeRemaining > 0) {
+        timeRemaining -= Time.deltaTime;
+        updateTime(timeRemaining);
+      } else {
+        timeText.text = "0";
+        Debug.Log("End Game");
+		sceneController.LoadGameOver();
+      }
     }
 
+  }
 
-	// Creates a Ray from the mouse position
-	Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+   void Raycast() {
+    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+    RaycastHit hit;
+    if (Physics.Raycast(ray, out hit, 100f)) {
+      //draw invisible ray cast/vector
+      Debug.DrawLine(ray.origin, hit.point);
+      //log hit area to the console
+      Debug.Log(hit.collider);
 
+      //delete object 
+      if (Input.GetMouseButton(0)) {
+        Debug.Log("Pressed left click.");
+        GameObject item = hit.collider.gameObject;
 
-    void Update()
-    {
+        if (item.tag == ("Food")) {
+          timeRemaining += 5f;
+          Destroy(hit.collider.gameObject);
+          updateScore(50);
 
-        // Debug.DrawRay(Input.mousePosition, d);
-
-
-		
-        if (timeRemaining > 0)
-        {
-            timeRemaining -= Time.deltaTime;
-			updateTimeText(timeRemaining);
+        } else if (item.tag == "Trash") {
+          Destroy(hit.collider.gameObject);
         }
-		else {
-			timeText.text = "0";
-			Debug.Log("End Game");
-		}
+
+      }
+          
     }
+  }
 
-	void updateTimeText(float newTime) {
-		timeText.text = newTime.ToString();
+  void updateTime(float newTime) {
+    timeText.text = "Time Left:" + "\n" + newTime.ToString("0.00");
+  }
 
-	}
+  void updateScore(int points) {
+    score += points;
+    scoreText.text = "Score:" + "\n" + score.ToString();
+  }
 
+  public void StartGame(){
+	Debug.Log("Game Playing");
+	gamePlaying = true;
+  }
 
-	
-	private void handleStartGame() {
-
-
-	}
-
-	private void handleQuitGame() {
-		
-	}
+   public void QuitGame(){
+	Debug.Log("Exiting Game");
+	Application.Quit();
+  }
 
 }
