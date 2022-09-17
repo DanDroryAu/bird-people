@@ -25,7 +25,6 @@ public class BeakCollider : MonoBehaviour
     
     void OnCollisionEnter(Collision other)
     {
-        Debug.Log(other.gameObject.name);
         if (other.gameObject.tag == "Trash" && Input.GetMouseButton(0))
         {
             other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
