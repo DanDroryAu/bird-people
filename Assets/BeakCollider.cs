@@ -4,6 +4,7 @@ public class BeakCollider : MonoBehaviour
 {
     [SerializeField] private Transform wholeAssBeak;
     private GameObject myPrecious;
+    [SerializeField] private Transform trashCan;
     
     // Start is called before the first frame update
     void Start()
