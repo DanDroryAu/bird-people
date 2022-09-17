@@ -57,12 +57,12 @@ public class HeadMovement : MonoBehaviour
             // allowing roll/tilt of head
             transform.localEulerAngles = new Vector3(-verticalRotation, horizontalRotation, -horizontalRotation);  
 
-            Debug.Log(verticalMouse);
             // head goes down to pick up trash
             transform.position += new Vector3(horizontalMouse * 2f, -verticalMouse * 5f, verticalMouse * 8f);
         } 
         else {
-            transform.position = worldPosition;
+            // move object by (x, y, z)
+            transform.position = transform.position + new Vector3(horizontalMouse * 300f * Time.deltaTime, verticalMouse * 300f * Time.deltaTime, 0);
         }
     }
 }
