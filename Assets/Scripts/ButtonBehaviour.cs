@@ -9,44 +9,30 @@ public class ButtonBehaviour : MonoBehaviour
 {
     public SoundManager soundManager;
     
-    // Getters
-    private void GetSoundManager()
-    {
-        if (!soundManager)
-        {
-            soundManager = FindObjectOfType<SoundManager>();
-        }
-    }
-    
     // Music
     public void ToggleSoundtrackMute()
     {
-        GetSoundManager();
-        soundManager.ToggleSoundtrackMute();
+        EventManager.TriggerEvent("ToggleSoundtrackMute");
     }
     
     // SFX
     public void ToggleAmbianceMute()
     {
-        GetSoundManager();
-        soundManager.ToggleAmbianceMute();
+        EventManager.TriggerEvent("ToggleAmbianceMute");
     }
     
     public void PlayTrashRustle()
     {
-        GetSoundManager();
-        soundManager.PlayTrashRustle();
+        EventManager.TriggerEvent("PlayTrashRustle");
     }
     
     public void PlayClack()
     {
-        GetSoundManager();
-        soundManager.PlayClack();
+        EventManager.TriggerEvent("PlayClack");
     }
     
     public void PlayHonk()
     {
-        GetSoundManager();
-        soundManager.PlayHonk();
+        EventManager.TriggerEvent("PlayHonk");
     }
 }
