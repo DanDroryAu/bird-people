@@ -11,7 +11,10 @@ public class HeadMovement : MonoBehaviour
     public LayerMask hitLayers;
     public Vector3 worldPosition;
 
-    Plane plane = new Plane(Vector3.up, 0);
+    Plane plane = new Plane(Vector3.up, Vector3.zero);
+    public float headMovementSpeed = 20;
+    
+    public Vector2 previousMousePos;
 
     public enum RotationAxes {
         MouseXAndY = 0,
@@ -31,32 +34,40 @@ public class HeadMovement : MonoBehaviour
     void Update()
     {   
         
-      float distance;
-      Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-    if (plane.Raycast(ray, out distance))
-    {
-        worldPosition = ray.GetPoint(distance);
-        transform.position = worldPosition;
-    }
-            
-        if(Input.GetKey(KeyCode.Space)){
+        float distance;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        // if (plane.Raycast(ray, out distance))
+        // {
+        //     worldPosition = ray.GetPoint(distance);
+        //     transform.position = worldPosition;
+        // }
+                
+        if(Input.GetKey(KeyCode.Space)) {
             if(axes == RotationAxes.MouseX){
-            transform.Rotate(0, Input.GetAxis("Mouse X") * 15f, 0);
-        } else if (axes == RotationAxes.MouseY){
-            verticalRotation -= Input.GetAxis("Mouse Y") * 15f;
-            verticalRotation = Mathf.Clamp(verticalRotation, -45.0f, 45.0f);
+                transform.Rotate(0, 0, Input.GetAxis("Mouse Y") * 15f - 90);
+            } else if (axes == RotationAxes.MouseY){
+                verticalRotation -= Input.GetAxis("Mouse X") * 15f;
+                verticalRotation = Mathf.Clamp(verticalRotation, -45.0f, 45.0f);
 
-            float horizontalRotation = transform.localEulerAngles.y;
+                float horizontalRotation = transform.localEulerAngles.y;
 
-            transform.localEulerAngles = new Vector3(verticalRotation, horizontalRotation, 0);
+                transform.localEulerAngles = new Vector3(verticalRotation, horizontalRotation, -90);
+            } else {
+                verticalRotation -= Input.GetAxis("Mouse X") * 15f;
+                verticalRotation = Mathf.Clamp(verticalRotation, -45.0f, 45.0f);
+
+                float delta = Input.GetAxis("Mouse Y") * 9.0f;
+                float horizontalRotation = transform.localEulerAngles.y + delta;
+                transform.localEulerAngles = new Vector3(verticalRotation, horizontalRotation, -90);    
+            }
         } else {
-            verticalRotation -= Input.GetAxis("Mouse Y") * 15f;
-            verticalRotation = Mathf.Clamp(verticalRotation, -45.0f, 45.0f);
-
-            float delta = Input.GetAxis("Mouse X") * 9.0f;
-            float horizontalRotation = transform.localEulerAngles.y + delta;
-            transform.localEulerAngles = new Vector3(verticalRotation, horizontalRotation, 0);    
-        }
+            Debug.Log(Input.GetAxis("Mouse X"));
+            //transform.Translate(new Vector3(-Input.GetAxis("Mouse X") * headMovementSpeed * Time.deltaTime, Input.GetAxis("Mouse Y") * headMovementSpeed * Time.deltaTime, 0), Space.Self);
+            if (plane.Raycast(ray, out distance))
+            {
+                worldPosition = ray.GetPoint(distance);
+                transform.position = new Vector3(worldPosition.x, 0, worldPosition.z);
+            }
         }
         
     }
