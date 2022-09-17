@@ -46,7 +46,7 @@ public class HeadMovement : MonoBehaviour
         }
             
         // head rotates with mouse
-        if(Input.GetMouseButton(0)){
+        if(Input.GetKey(KeyCode.Space)){
             // pitch - movement along the X axis, up and down
             verticalRotation -= verticalMouse * 45f;
             verticalRotation = Mathf.Clamp(verticalRotation, -90f, 90f);
