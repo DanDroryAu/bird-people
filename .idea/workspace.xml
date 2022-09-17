@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2cc6ca01-650c-412c-b636-422fd305caa2" name="Changes" comment="">
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gullet.cs" afterDir="false" />
+=======
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+>>>>>>> 02f36cc0dc331b5fa21c9823ea70bb1e5aa3de8b
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +78,7 @@
       <updated>1663319185930</updated>
       <workItem from="1663319186848" duration="4000" />
       <workItem from="1663320271318" duration="599000" />
-      <workItem from="1663398554311" duration="497000" />
+      <workItem from="1663398554311" duration="1028000" />
     </task>
     <servers />
   </component>
