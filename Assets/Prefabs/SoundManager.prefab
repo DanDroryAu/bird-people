@@ -486,6 +486,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b480bd053cbc34aee966ca44caa1469f, type: 3}
   clackSource: {fileID: 274107614}
   clackSound: {fileID: 8300000, guid: b08690ebad91b4b78ad37987fb9ac8f7, type: 3}
+  gulpSound: {fileID: 8300000, guid: fcb28b7ca76e74b039dd2eaaf57d67ba, type: 3}
   honkSource: {fileID: 274107611}
   honkSounds:
   - {fileID: 8300000, guid: 90d1f8d40a1a54a919e1581c0e738309, type: 3}

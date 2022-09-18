@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1595390320719676391}
   - component: {fileID: 3586835914552719149}
   - component: {fileID: 2740042227008998829}
+  - component: {fileID: 3719971687491623642}
   - component: {fileID: 2740042227008998824}
   m_Layer: 0
   m_Name: Burger
@@ -101,6 +102,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3719971687491623642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3082709764256863992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ce4bf79ebb54445a956fda7b946f218, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &2740042227008998824
 SphereCollider:
   m_ObjectHideFlags: 0
