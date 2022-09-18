@@ -8969,6 +8969,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 9216188464249473044, guid: cd29bc8bbe3207a4f95c02ebedf256fc, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9216188464249473044, guid: cd29bc8bbe3207a4f95c02ebedf256fc, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9216188464249473044, guid: cd29bc8bbe3207a4f95c02ebedf256fc, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9216188464249473045, guid: cd29bc8bbe3207a4f95c02ebedf256fc, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -9000,6 +9012,22 @@ PrefabInstance:
     - target: {fileID: 9216188464249473045, guid: cd29bc8bbe3207a4f95c02ebedf256fc, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 82
+      objectReference: {fileID: 0}
+    - target: {fileID: 9216188465354483785, guid: cd29bc8bbe3207a4f95c02ebedf256fc, type: 3}
+      propertyPath: m_text
+      value: Controls
+      objectReference: {fileID: 0}
+    - target: {fileID: 9216188465354483785, guid: cd29bc8bbe3207a4f95c02ebedf256fc, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9216188465354483786, guid: cd29bc8bbe3207a4f95c02ebedf256fc, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 68.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9216188465354483786, guid: cd29bc8bbe3207a4f95c02ebedf256fc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 66.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd29bc8bbe3207a4f95c02ebedf256fc, type: 3}
