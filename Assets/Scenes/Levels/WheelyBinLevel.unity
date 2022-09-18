@@ -5692,11 +5692,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2934876877749577196, guid: d1045e6aafadf164cb42677431dd30e0, type: 3}
       propertyPath: foodAmount
-      value: 800
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 2934876877749577196, guid: d1045e6aafadf164cb42677431dd30e0, type: 3}
       propertyPath: trashAmount
-      value: 800
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 2934876877749577196, guid: d1045e6aafadf164cb42677431dd30e0, type: 3}
       propertyPath: xSpawnRange
@@ -5711,6 +5711,10 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2934876877749577196, guid: d1045e6aafadf164cb42677431dd30e0, type: 3}
+      propertyPath: foodItems.Array.size
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934876877749577196, guid: d1045e6aafadf164cb42677431dd30e0, type: 3}
       propertyPath: trashItems.Array.size
       value: 5
       objectReference: {fileID: 0}
@@ -5722,6 +5726,38 @@ PrefabInstance:
       propertyPath: foodItems.Array.data[1]
       value: 
       objectReference: {fileID: 6933977611479469086, guid: 1ef63d155e3f0475692f9fc92572a8eb, type: 3}
+    - target: {fileID: 2934876877749577196, guid: d1045e6aafadf164cb42677431dd30e0, type: 3}
+      propertyPath: foodItems.Array.data[5]
+      value: 
+      objectReference: {fileID: 7452107217823374693, guid: 532377f300c1f4d05936deedd7632338, type: 3}
+    - target: {fileID: 2934876877749577196, guid: d1045e6aafadf164cb42677431dd30e0, type: 3}
+      propertyPath: foodItems.Array.data[6]
+      value: 
+      objectReference: {fileID: 1510015613498056292, guid: 253c29f21c766465683dd9116210af20, type: 3}
+    - target: {fileID: 2934876877749577196, guid: d1045e6aafadf164cb42677431dd30e0, type: 3}
+      propertyPath: foodItems.Array.data[7]
+      value: 
+      objectReference: {fileID: 7946103015056386176, guid: c291ff05da104484994fae0f7b234609, type: 3}
+    - target: {fileID: 2934876877749577196, guid: d1045e6aafadf164cb42677431dd30e0, type: 3}
+      propertyPath: foodItems.Array.data[8]
+      value: 
+      objectReference: {fileID: 6335896046526659341, guid: 1470c175c03514c748172be0e0b0bc6d, type: 3}
+    - target: {fileID: 2934876877749577196, guid: d1045e6aafadf164cb42677431dd30e0, type: 3}
+      propertyPath: foodItems.Array.data[9]
+      value: 
+      objectReference: {fileID: 2591667597201723646, guid: 77553c19819d14e18985685f463830a0, type: 3}
+    - target: {fileID: 2934876877749577196, guid: d1045e6aafadf164cb42677431dd30e0, type: 3}
+      propertyPath: foodItems.Array.data[10]
+      value: 
+      objectReference: {fileID: 3016609994718321663, guid: 46f95b2edec9d432c99e475dda82ebe7, type: 3}
+    - target: {fileID: 2934876877749577196, guid: d1045e6aafadf164cb42677431dd30e0, type: 3}
+      propertyPath: foodItems.Array.data[11]
+      value: 
+      objectReference: {fileID: 3082709764256863992, guid: 11dc8e7b81d8b457794482b68e141627, type: 3}
+    - target: {fileID: 2934876877749577196, guid: d1045e6aafadf164cb42677431dd30e0, type: 3}
+      propertyPath: foodItems.Array.data[12]
+      value: 
+      objectReference: {fileID: 4338300741095798191, guid: de8022357dbb64622a647ee6ac08a547, type: 3}
     - target: {fileID: 2934876877749577196, guid: d1045e6aafadf164cb42677431dd30e0, type: 3}
       propertyPath: trashItems.Array.data[0]
       value: 
