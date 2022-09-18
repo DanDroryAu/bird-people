@@ -1,6 +1,17 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/Prefabs/InGameUI/TimeUp.prefab.meta
 guid: 6d08da4fd47908944bc4fb17827f575e
 PrefabImporter:
+=======
+guid: adf00433941ed405aa8fef7446e80bf8
+folderAsset: yes
+DefaultImporter:
+>>>>>>> main:Assets/Assets/Fonts.meta
+=======
+guid: 6d08da4fd47908944bc4fb17827f575e
+PrefabImporter:
+>>>>>>> main
   externalObjects: {}
   userData: 
   assetBundleName: 

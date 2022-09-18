@@ -1,6 +1,15 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/Prefabs/InGameUI.meta
 guid: dfddb95966ed69e46be1f8caa386d76f
 folderAsset: yes
+=======
+guid: 3957eafb2899f384daae8ea56539bd5c
+>>>>>>> main:Assets/Scenes/Levels/Corey Updated UI.unity.meta
+=======
+guid: dfddb95966ed69e46be1f8caa386d76f
+folderAsset: yes
+>>>>>>> main
 DefaultImporter:
   externalObjects: {}
   userData: 

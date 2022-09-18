@@ -1,7 +1,17 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/Assets/CFX4 Fire.prefab.meta
+guid: ea6b294036e66be488dd631d74312b1c
+=======
+<<<<<<< HEAD:Assets/Prefabs/InGameUI/TimeUp.prefab.meta
+guid: 6d08da4fd47908944bc4fb17827f575e
+>>>>>>> main
+PrefabImporter:
+=======
 guid: adf00433941ed405aa8fef7446e80bf8
 folderAsset: yes
 DefaultImporter:
+>>>>>>> main:Assets/Assets/Fonts.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

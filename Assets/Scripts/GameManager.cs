@@ -45,16 +45,19 @@ public class GameManager: MonoBehaviour {
   void OnSceneLoaded (Scene scene, LoadSceneMode mode) {
     Debug.Log("Loaded Level Again");
     if (SceneManager.GetActiveScene().name == "WheelyBinLevel") {
+      Cursor.visible = false;
       timeRemaining = startGameTime;
       score = 0;
       Debug.Log(GameObject.Find("Score"));
       scoreText = GameObject.Find("Score").GetComponent<TMP_Text>();
       timeText = GameObject.Find("Time").GetComponent<TMP_Text>();
+    
       timeUpText = GameObject.Find("TimeUp").GetComponent<TMP_Text>();
       timeUpObj = GameObject.Find("TimeUp");
       timeUpObj.SetActive(false);
       timeAddedAnim = GameObject.Find("5 Seconds Added").GetComponent<Animator>();
- 
+    } else {
+      Cursor.visible = true;
     }
   }
 
@@ -129,7 +132,7 @@ public class GameManager: MonoBehaviour {
   public void EatFood(int score = 50, float time = 5) { 
     timeRemaining += time;
     updateScore(score);
-    EventManager.TriggerEvent(AudioEventName.PlayDing);
+    // EventManager.TriggerEvent(AudioEventName.PlayDing);
     timeAddedAnim.SetTrigger("Active");
   }
 
