@@ -25,6 +25,6 @@ public class CameraMove : MonoBehaviour
         // Set the position of the camera's transform to be the same as the player's, but offset by the calculated offset distance.
 
         zoom = rotis.currentAngleNormalized  * 2 / rotis.maxAngleNormalized * -1 + 1;
-        transform.position = Vector3.MoveTowards(transform.position, player.transform.position + (offset * zoom), 6 * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, player.transform.position + (offset * Mathf.Min(zoom, 3)), 12 * Time.deltaTime);
     }
 }
