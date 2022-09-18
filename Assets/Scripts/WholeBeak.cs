@@ -7,9 +7,7 @@ public class WholeBeak : MonoBehaviour
     [SerializeField] float maxBeakAngle = 10f;
     [SerializeField] private float beakClosedAngle = 2f;
     [SerializeField] private float beakVelocity = 0.1f;
-    [SerializeField] float moveSpeed = 10f;
-    [SerializeField] private float rotateSpeed = 100f;
-    
+
     [SerializeField] private Transform topBeak;
     [SerializeField] private Transform bottomBeak;
     
@@ -30,11 +28,6 @@ public class WholeBeak : MonoBehaviour
     // Update is called once per frame
         void FixedUpdate()
         {
-            float horizontalVelocity = Input.GetAxis("Horizontal") * rotateSpeed * Time.deltaTime;
-            float verticalVelocity = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;;
-            transform.Rotate(0,-horizontalVelocity, 0);
-            transform.Translate(0, verticalVelocity,0 );
-
             Vector3 topBeakVector = topBase.position - topTip.position;
             Vector3 bottomBeakVector = bottomBase.position - bottomTip.position;
 
