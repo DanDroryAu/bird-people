@@ -13,6 +13,8 @@ public static class AudioEventName
     public static string PlayHonk = "PlayHonk";
     public static string PlayGulp = "PlayGulp";
     public static string PlayVom = "PlayVom";
+    public static string PlayTimeIsUp = "PlayTimeIsUp";
+    public static string PlayDing = "PlayDing";
 }
 
 public class SoundManager : MonoBehaviour
@@ -29,6 +31,8 @@ public class SoundManager : MonoBehaviour
         EventManager.StartListening(AudioEventName.PlayHonk, PlayHonk);
         EventManager.StartListening(AudioEventName.PlayGulp, PlayGulp);
         EventManager.StartListening(AudioEventName.PlayVom, PlayVom);
+        EventManager.StartListening(AudioEventName.PlayTimeIsUp, PlayTimeIsUp);
+        EventManager.StartListening(AudioEventName.PlayDing, PlayDing);
     }
 
     void OnDisable ()
@@ -40,6 +44,8 @@ public class SoundManager : MonoBehaviour
         EventManager.StopListening(AudioEventName.PlayHonk, PlayHonk);
         EventManager.StopListening(AudioEventName.PlayGulp, PlayGulp);
         EventManager.StopListening(AudioEventName.PlayVom, PlayVom);
+        EventManager.StopListening(AudioEventName.PlayTimeIsUp, PlayTimeIsUp);
+        EventManager.StopListening(AudioEventName.PlayDing, PlayDing);
     }
     
     // Music
@@ -77,5 +83,15 @@ public class SoundManager : MonoBehaviour
     public void PlayVom()
     {
         soundEffectsManager.PlayVom();
+    }
+    
+    public void PlayTimeIsUp()
+    {
+        soundEffectsManager.PlayTimeIsUp();
+    }
+    
+    public void PlayDing()
+    {
+        soundEffectsManager.PlayDing();
     }
 }

@@ -89,7 +89,7 @@ public class GameManager: MonoBehaviour {
       IEnumerator ShowTimeIsUp()
     {
        timeUpObj.SetActive(true);
-       // suspend execution for 5 seconds
+       EventManager.TriggerEvent(AudioEventName.PlayTimeIsUp);
         yield return new WaitForSeconds(3); 
         sceneController.LoadGameOver();   
     }
@@ -125,8 +125,7 @@ public class GameManager: MonoBehaviour {
   public void EatFood(int score = 50, float time = 5) { 
     timeRemaining += time;
     updateScore(score);
-    //trigger SFX
-    EventManager.TriggerEvent(AudioEventName.PlayHonk);
+    EventManager.TriggerEvent(AudioEventName.PlayDing);
   }
 
   void updateTime(float newTime) {
