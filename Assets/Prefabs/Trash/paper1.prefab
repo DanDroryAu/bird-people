@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1888063218950546037}
   - component: {fileID: 1004912806110016148}
   - component: {fileID: 1004912806110014827}
+  - component: {fileID: 7255184623012863985}
   m_Layer: 0
   m_Name: paper1
   m_TagString: Trash
@@ -114,3 +115,15 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.0044932757
   m_Center: {x: -0.0008542041, y: -0.00066135876, z: -0.0017683492}
+--- !u!114 &7255184623012863985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86486548239385504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ce4bf79ebb54445a956fda7b946f218, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
