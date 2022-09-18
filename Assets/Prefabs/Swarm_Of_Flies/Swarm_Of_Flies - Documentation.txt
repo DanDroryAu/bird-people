@@ -1,0 +1,12 @@
+
+A buzzing swarm of flies.
+
+Load "Swarm_Of_Flies.unity" for an example scene, or simply drag the required swarm size from the Prefabs folder (in the Project window) into the Hierarchy window.
+
+Note you can also scale each swarm by altering the size of its parent node (making the flies swarm in a larger or smaller area).
+
+Have fun!
+
+Thanks for purchasing this asset, please consider rating or writing a review about it. If you have any questions then please get in touch at bendurrant@rivermillstudios.com
+
+
