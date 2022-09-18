@@ -11,6 +11,7 @@ public class Gullet : MonoBehaviour
         {
             Destroy(other.gameObject);
             Debug.Log("VICTORY SCREECH");
+            EventManager.TriggerEvent(AudioEventName.PlayGulp);
         }
     }
 }

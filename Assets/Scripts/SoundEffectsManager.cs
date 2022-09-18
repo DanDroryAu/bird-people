@@ -9,6 +9,7 @@ public class SoundEffectsManager : MonoBehaviour
     [SerializeField] AudioClip[] ambianceSounds;
     [SerializeField] AudioSource clackSource;
     [SerializeField] AudioClip clackSound;
+    [SerializeField] AudioClip gulpSound;
     [SerializeField] AudioSource honkSource;
     [SerializeField] AudioClip[] honkSounds;
     [SerializeField] AudioSource trashSource;
@@ -66,5 +67,10 @@ public class SoundEffectsManager : MonoBehaviour
     public void PlayClack()
     {
         clackSource.PlayOneShot(clackSound);
+    }
+    
+    public void PlayGulp()
+    {
+        clackSource.PlayOneShot(gulpSound);
     }
 }

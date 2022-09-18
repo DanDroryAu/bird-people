@@ -11,6 +11,7 @@ public static class AudioEventName
     public static string PlayTrashRustle = "PlayTrashRustle";
     public static string PlayClack = "PlayClack";
     public static string PlayHonk = "PlayHonk";
+    public static string PlayGulp = "PlayGulp";
 }
 
 public class SoundManager : MonoBehaviour
@@ -25,6 +26,7 @@ public class SoundManager : MonoBehaviour
         EventManager.StartListening(AudioEventName.PlayTrashRustle, PlayTrashRustle);
         EventManager.StartListening(AudioEventName.PlayClack, PlayClack);
         EventManager.StartListening(AudioEventName.PlayHonk, PlayHonk);
+        EventManager.StartListening(AudioEventName.PlayGulp, PlayGulp);
     }
 
     void OnDisable ()
@@ -34,6 +36,7 @@ public class SoundManager : MonoBehaviour
         EventManager.StopListening(AudioEventName.PlayTrashRustle, PlayTrashRustle);
         EventManager.StopListening(AudioEventName.PlayClack, PlayClack);
         EventManager.StopListening(AudioEventName.PlayHonk, PlayHonk);
+        EventManager.StopListening(AudioEventName.PlayGulp, PlayGulp);
     }
     
     // Music
@@ -61,5 +64,10 @@ public class SoundManager : MonoBehaviour
     public void PlayHonk()
     {
         soundEffectsManager.PlayHonk();
+    }
+    
+    public void PlayGulp()
+    {
+        soundEffectsManager.PlayGulp();
     }
 }
