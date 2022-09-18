@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager: MonoBehaviour {
-  bool gamePlaying = false;
+  public bool gamePlaying = false;
   SceneController sceneController;
 
   public static GameManager Instance {
@@ -24,25 +25,40 @@ public class GameManager: MonoBehaviour {
       Destroy(this);
     } else {
       Instance = this;
+      DontDestroyOnLoad(gameObject);
+      SceneManager.sceneLoaded += OnSceneLoaded;
     }
   } 
 
+  void OnSceneLoaded (Scene scene, LoadSceneMode mode) {
+    Debug.Log("Loaded Level Again");
+    if (SceneManager.GetActiveScene().name == "WheelyBinLevel") {
+      timeRemaining = 5;
+      Debug.Log(GameObject.Find("Score"));
+      scoreText = GameObject.Find("Score").GetComponent<TMP_Text>();
+      timeText = GameObject.Find("Time").GetComponent<TMP_Text>();
+    }
+  }
+
   private void Start() {
-	sceneController = FindObjectOfType<SceneController>();
-	scoreText.text = "";
-	timeText.text = "";
+    sceneController = FindObjectOfType<SceneController>();
+    scoreText.text = "";
+    timeText.text = "";
   }
 
   void Update() {
     if (gamePlaying) {
-      Raycast();
-      if (timeRemaining > 0) {
-        timeRemaining -= Time.deltaTime;
-        updateTime(timeRemaining);
-      } else {
-        timeText.text = "0";
-        Debug.Log("End Game");
-		sceneController.LoadGameOver();
+      // Raycast();
+      if (SceneManager.GetActiveScene().name == "WheelyBinLevel") {
+        if (timeRemaining > 0) {
+          timeRemaining -= Time.deltaTime;
+          updateTime(timeRemaining);
+        } else {
+          timeText.text = "0";
+          Debug.Log("End Game");
+          gamePlaying = false;
+          sceneController.LoadGameOver();
+        }
       }
     }
 
@@ -91,13 +107,13 @@ public class GameManager: MonoBehaviour {
   }
 
   public void StartGame(){
-	Debug.Log("Game Playing");
-	gamePlaying = true;
+    Debug.Log("Game Playing");
+    gamePlaying = true;
   }
 
    public void QuitGame(){
-	Debug.Log("Exiting Game");
-	Application.Quit();
+    Debug.Log("Exiting Game");
+    Application.Quit();
   }
 
 }
