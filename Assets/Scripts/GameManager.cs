@@ -125,7 +125,7 @@ public class GameManager: MonoBehaviour {
   public void EatFood(int score = 50, float time = 5) { 
     timeRemaining += time;
     updateScore(score);
-    EventManager.TriggerEvent(AudioEventName.PlayDing);
+    // EventManager.TriggerEvent(AudioEventName.PlayDing);
   }
 
   void updateTime(float newTime) {
