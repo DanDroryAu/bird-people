@@ -12,6 +12,7 @@ public class ItemSpawner : MonoBehaviour
 	[SerializeField] int trashAmount;
 	[SerializeField] float xSpawnRange;
 	[SerializeField] float zSpawnRange;
+	[SerializeField] float ySpawnRange;
 
 
 	
@@ -21,23 +22,23 @@ public class ItemSpawner : MonoBehaviour
 		//define area to spawn items in and drawn the lines with debug
 		//get bounds of the colliders X and Z 
 		BoxCollider bcolldier = GetComponent<BoxCollider>();
-		bcolldier.size = new Vector3(xSpawnRange, 0.2f, zSpawnRange);
+		bcolldier.size = new Vector3(xSpawnRange, ySpawnRange, zSpawnRange);
 		Debug.Log(bcolldier.bounds.min);
 		Debug.Log(bcolldier.bounds.max);
 
 		//Pick random item
 
 		for(int i = 0; i < foodAmount; i++) {
-		GameObject itemToSpawn = foodItems[Random.Range(0, foodItems.Length)];
-		var position = new Vector3(Random.Range(bcolldier.bounds.min.x,bcolldier.bounds.max.x), 0, Random.Range(bcolldier.bounds.min.z,bcolldier.bounds.max.z));
-        Instantiate(itemToSpawn, position, Quaternion.identity);
-	}
+			GameObject itemToSpawn = foodItems[Random.Range(0, foodItems.Length)];
+			var position = new Vector3(Random.Range(bcolldier.bounds.min.x,bcolldier.bounds.max.x), Random.Range(bcolldier.bounds.min.y,bcolldier.bounds.max.y), Random.Range(bcolldier.bounds.min.z,bcolldier.bounds.max.z));
+			Instantiate(itemToSpawn, position, Quaternion.identity);
+		}
 
 		for(int i = 0; i < trashAmount; i++) {
-		GameObject itemToSpawn = trashItems[Random.Range(0, trashItems.Length)];
-		var position = new Vector3(Random.Range(bcolldier.bounds.min.x,bcolldier.bounds.max.x), 0, Random.Range(bcolldier.bounds.min.z,bcolldier.bounds.max.z));
-        Instantiate(itemToSpawn, position, Quaternion.identity);
-	}
+			GameObject itemToSpawn = trashItems[Random.Range(0, trashItems.Length)];
+			var position = new Vector3(Random.Range(bcolldier.bounds.min.x,bcolldier.bounds.max.x), Random.Range(bcolldier.bounds.min.y,bcolldier.bounds.max.y), Random.Range(bcolldier.bounds.min.z,bcolldier.bounds.max.z));
+			Instantiate(itemToSpawn, position, Quaternion.identity);
+		}
 	
 
         
