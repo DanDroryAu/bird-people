@@ -8,6 +8,8 @@ public class GameManager: MonoBehaviour {
   public bool gamePlaying = false;
   SceneController sceneController;
 
+  public int startGameTime = 60;
+
   public static GameManager Instance {
     get;
     private set;
@@ -33,7 +35,8 @@ public class GameManager: MonoBehaviour {
   void OnSceneLoaded (Scene scene, LoadSceneMode mode) {
     Debug.Log("Loaded Level Again");
     if (SceneManager.GetActiveScene().name == "WheelyBinLevel") {
-      timeRemaining = 5;
+      timeRemaining = startGameTime;
+      score = 0;
       Debug.Log(GameObject.Find("Score"));
       scoreText = GameObject.Find("Score").GetComponent<TMP_Text>();
       timeText = GameObject.Find("Time").GetComponent<TMP_Text>();
