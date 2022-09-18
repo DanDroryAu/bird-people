@@ -17,7 +17,7 @@ public class GameManager: MonoBehaviour {
 
   // int Score = 0;
   [SerializeField] float timeRemaining;
-  int score = 0;
+  public int score = 50;
 
   //check and delete itself if it exists
   void Awake() {
