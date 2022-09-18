@@ -16,6 +16,8 @@ public class WholeBeak : MonoBehaviour
     [SerializeField] private Transform bottomBase;
     [SerializeField] private Transform bottomTip;
 
+    [SerializeField] private bool isBeakClackReady = false;
+
     
 // Start is called before the first frame update
     void Start()
@@ -32,10 +34,18 @@ public class WholeBeak : MonoBehaviour
             Vector3 bottomBeakVector = bottomBase.position - bottomTip.position;
 
             float angleDiff = Vector3.Angle(topBeakVector, bottomBeakVector);
+            
+            if(angleDiff < beakClosedAngle && isBeakClackReady) {
+                EventManager.TriggerEvent(AudioEventName.PlayClack);
+                isBeakClackReady = false;
+            }
 
             if (Input.GetMouseButton(0))
             {
                 if(angleDiff >= beakClosedAngle) {
+                    // Reset beak clack
+                    isBeakClackReady = true;
+                    
                     topBeak.Rotate(-beakVelocity, 0, 0);
                     bottomBeak.Rotate(beakVelocity, 0, 0);
                 }
@@ -43,6 +53,16 @@ public class WholeBeak : MonoBehaviour
             else if (!Input.GetMouseButton(0))
             {
                 if (angleDiff <= maxBeakAngle) {
+                    // Honk randomly on beaking opening 
+                    float honkRange = UnityEngine.Random.Range(0, 50);
+                    bool isHonkActivated = honkRange < 1;
+                    
+                    if (isHonkActivated)
+                    {
+                        EventManager.TriggerEvent(AudioEventName.PlayHonk);
+                    }
+                    
+                    // Open beak on LMB release
                     topBeak.Rotate(beakVelocity, 0, 0);
                     bottomBeak.Rotate(-beakVelocity, 0, 0);
                 }

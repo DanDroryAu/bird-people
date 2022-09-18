@@ -19,6 +19,13 @@ public class SceneController : MonoBehaviour
 		SceneManager.LoadScene("Environment");
 		gameManager.StartGame();
 	}
+
+	public void LoadControls(){
+	Debug.Log("Loading How to play");
+	SceneManager.LoadScene("Controls");
+	}
+
+
 	public void LoadGameOver(){
 		Debug.Log("Loading Game Over");
 		SceneManager.LoadScene("Game Over");

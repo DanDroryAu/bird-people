@@ -76,6 +76,11 @@ public class GameManager: MonoBehaviour {
     }
   }
 
+  public void EatFood(int score = 50, float time = 5) { 
+    timeRemaining += time;
+    updateScore(score);
+  }
+
   void updateTime(float newTime) {
     timeText.text = "Time Left:" + "\n" + newTime.ToString("0.00");
   }
