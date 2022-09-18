@@ -490,6 +490,7 @@ MonoBehaviour:
   honkSource: {fileID: 274107611}
   honkSounds:
   - {fileID: 8300000, guid: 90d1f8d40a1a54a919e1581c0e738309, type: 3}
+  vomSound: {fileID: 8300000, guid: 8e6ac15debd1944e4b4b0b3dfb733324, type: 3}
   trashSource: {fileID: 274107610}
   trashSounds:
   - {fileID: 8300000, guid: c4f87ef8e2cfd4dd6888caf0cf135067, type: 3}

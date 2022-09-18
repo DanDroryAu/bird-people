@@ -21,7 +21,7 @@ public class Gullet : MonoBehaviour
             if (other.tag == "Trash") {
                 Destroy(other.gameObject);
                 Debug.Log("VICTORY SCREECH");
-                EventManager.TriggerEvent(AudioEventName.PlayGulp);
+                EventManager.TriggerEvent(AudioEventName.PlayVom);
             }
         }
     }
