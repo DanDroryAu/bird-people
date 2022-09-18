@@ -12,27 +12,27 @@ public class ButtonBehaviour : MonoBehaviour
     // Music
     public void ToggleSoundtrackMute()
     {
-        EventManager.TriggerEvent("ToggleSoundtrackMute");
+        EventManager.TriggerEvent(AudioEventName.ToggleSoundtrackMute);
     }
     
     // SFX
     public void ToggleAmbianceMute()
     {
-        EventManager.TriggerEvent("ToggleAmbianceMute");
+        EventManager.TriggerEvent(AudioEventName.ToggleAmbianceMute);
     }
     
     public void PlayTrashRustle()
     {
-        EventManager.TriggerEvent("PlayTrashRustle");
+        EventManager.TriggerEvent(AudioEventName.PlayTrashRustle);
     }
     
     public void PlayClack()
     {
-        EventManager.TriggerEvent("PlayClack");
+        EventManager.TriggerEvent(AudioEventName.PlayClack);
     }
     
     public void PlayHonk()
     {
-        EventManager.TriggerEvent("PlayHonk");
+        EventManager.TriggerEvent(AudioEventName.PlayHonk);
     }
 }

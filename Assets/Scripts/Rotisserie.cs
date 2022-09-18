@@ -19,7 +19,7 @@ public class Rotisserie : MonoBehaviour
     void Update()
     {
 
-        Debug.Log(this.transform.localRotation.eulerAngles.y);
+        // Debug.Log(this.transform.localRotation.eulerAngles.y);
 
         if (Input.GetKey(KeyCode.W) && this.transform.localRotation.eulerAngles.y <= lowAngle) {
             this.transform.Rotate(new Vector3(-.2f, 0, 0));
