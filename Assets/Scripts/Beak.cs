@@ -37,10 +37,10 @@ public class Beak : MonoBehaviour
     // Update is called once per frame
         void FixedUpdate()
         {
-            float horizontalVelocity = Input.GetAxis("Horizontal") * rotateSpeed * Time.deltaTime;
-            float verticalVelocity = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;;
-            transform.Rotate(0,-horizontalVelocity, 0);
-            transform.Translate(0, verticalVelocity,0 );
+            // float horizontalVelocity = Input.GetAxis("Horizontal") * rotateSpeed * Time.deltaTime;
+            // float verticalVelocity = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;;
+            // transform.Rotate(0,-horizontalVelocity, 0);
+            // transform.Translate(0, verticalVelocity,0 );
             
             
             topBeakRotation = topBeak.rotation.eulerAngles.z;
