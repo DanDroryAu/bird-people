@@ -69,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 2872274cc74e1473685e687e14e9c36f, type: 2}
     - target: {fileID: 919132149155446097, guid: 4e5245bf173e442f2885f7758a79bece, type: 3}
       propertyPath: m_Name
-      value: paper3
+      value: paper3 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4e5245bf173e442f2885f7758a79bece, type: 3}
       propertyPath: m_TagString
@@ -111,3 +111,15 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.0044932757
   m_Center: {x: -0.0008542041, y: -0.00066135876, z: -0.0017683492}
+--- !u!114 &809481597451961880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2664210302467527610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ce4bf79ebb54445a956fda7b946f218, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
