@@ -15,11 +15,13 @@ public class Gullet : MonoBehaviour
                 Destroy(other.gameObject);
                 GameManager.Instance.EatFood();
                 Debug.Log("VICTORY SCREECH");
+                EventManager.TriggerEvent(AudioEventName.PlayGulp);
             }
 
             if (other.tag == "Trash") {
                 Destroy(other.gameObject);
-                Debug.Log("VICTORY SCREECH");
+                Debug.Log("UGH VOM");
+                EventManager.TriggerEvent(AudioEventName.PlayVom);
             }
         }
     }

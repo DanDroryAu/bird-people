@@ -35,7 +35,18 @@ public class SceneController : MonoBehaviour
 		SceneManager.LoadScene("Main Menu");
 	}
 
-
+	public void QuitGame() {
+		#if UNITY_STANDALONE
+			//Quit the application
+			Application.Quit();
+		#endif
+	
+			//If we are running in the editor
+		#if UNITY_EDITOR
+			//Stop playing the scene
+			UnityEditor.EditorApplication.isPlaying = false;
+		#endif
+	}
 
 	
 
