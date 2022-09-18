@@ -35,11 +35,14 @@ public class GameManager: MonoBehaviour {
   void OnSceneLoaded (Scene scene, LoadSceneMode mode) {
     Debug.Log("Loaded Level Again");
     if (SceneManager.GetActiveScene().name == "WheelyBinLevel") {
+      Cursor.visible = false;
       timeRemaining = startGameTime;
       score = 0;
       Debug.Log(GameObject.Find("Score"));
       scoreText = GameObject.Find("Score").GetComponent<TMP_Text>();
       timeText = GameObject.Find("Time").GetComponent<TMP_Text>();
+    } else {
+      Cursor.visible = true;
     }
   }
 

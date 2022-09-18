@@ -5,6 +5,7 @@ using UnityEngine;
 public class Gullet : MonoBehaviour
 {
     public float yHeightActivation = 6;
+    public ParticleSystem parts;
 
 
     void OnTriggerEnter(Collider other)
@@ -16,12 +17,14 @@ public class Gullet : MonoBehaviour
                 GameManager.Instance.EatFood();
                 Debug.Log("VICTORY SCREECH");
                 EventManager.TriggerEvent(AudioEventName.PlayGulp);
+                parts.Play();
             }
 
             if (other.tag == "Trash") {
                 Destroy(other.gameObject);
                 Debug.Log("VICTORY SCREECH");
                 EventManager.TriggerEvent(AudioEventName.PlayVom);
+                parts.Play();
             }
         }
     }
