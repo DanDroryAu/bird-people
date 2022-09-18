@@ -26,7 +26,7 @@ public class Countdown : MonoBehaviour
 			currentTime -= 1 * Time.deltaTime;
 
 			if(currentTime < 1) {
-			countdownText.text = "Fkin Oath";
+			countdownText.text = "'KEN OATH";
 			GameManager.Instance.StartGame();
 			} else {
 
