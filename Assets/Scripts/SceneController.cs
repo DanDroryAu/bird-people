@@ -16,13 +16,12 @@ public class SceneController : MonoBehaviour
 
 	public void LoadGameStart(){
 		Debug.Log("Loading Game Start");
-		SceneManager.LoadScene("Environment");
-		gameManager.StartGame();
+		SceneManager.LoadScene(2);
 	}
 
 	public void LoadControls(){
-	Debug.Log("Loading How to play");
-	SceneManager.LoadScene("Controls");
+		Debug.Log("Loading How to play");
+		SceneManager.LoadScene("Controls");
 	}
 
 

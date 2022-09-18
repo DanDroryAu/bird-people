@@ -27,6 +27,7 @@ public class Countdown : MonoBehaviour
 
 			if(currentTime < 1) {
 			countdownText.text = "Fkin Oath";
+			GameManager.Instance.StartGame();
 			} else {
 
        		countdownText.text = currentTime.ToString("0");
