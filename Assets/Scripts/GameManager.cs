@@ -10,6 +10,9 @@ public class GameManager: MonoBehaviour {
   AudioClip timeAddedSFX;
   AudioClip[] countDownSFXList;
 
+  Animator timeAddedAnim;
+
+
   public bool gamePlaying = false;
   SceneController sceneController;
 
@@ -52,9 +55,9 @@ public class GameManager: MonoBehaviour {
       timeUpText = GameObject.Find("TimeUp").GetComponent<TMP_Text>();
       timeUpObj = GameObject.Find("TimeUp");
       timeUpObj.SetActive(false);
+      timeAddedAnim = GameObject.Find("5 Seconds Added").GetComponent<Animator>();
     } else {
       Cursor.visible = true;
- 
     }
   }
 
@@ -129,7 +132,8 @@ public class GameManager: MonoBehaviour {
   public void EatFood(int score = 50, float time = 5) { 
     timeRemaining += time;
     updateScore(score);
-    EventManager.TriggerEvent(AudioEventName.PlayDing);
+    // EventManager.TriggerEvent(AudioEventName.PlayDing);
+    timeAddedAnim.SetTrigger("Active");
   }
 
   void updateTime(float newTime) {
