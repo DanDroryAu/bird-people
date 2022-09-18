@@ -5,6 +5,11 @@ using TMPro;
 using UnityEngine.SceneManagement;
 
 public class GameManager: MonoBehaviour {
+
+  AudioSource gameAudioSource;
+  AudioClip timeAddedSFX;
+  AudioClip[] countDownSFXList;
+
   public bool gamePlaying = false;
   SceneController sceneController;
 
@@ -16,6 +21,8 @@ public class GameManager: MonoBehaviour {
   }
   [SerializeField] TMP_Text timeText;
   [SerializeField] TMP_Text scoreText;
+  [SerializeField] TMP_Text timeUpText;
+  GameObject timeUpObj;
 
   // int Score = 0;
   [SerializeField] float timeRemaining;
@@ -41,8 +48,13 @@ public class GameManager: MonoBehaviour {
       Debug.Log(GameObject.Find("Score"));
       scoreText = GameObject.Find("Score").GetComponent<TMP_Text>();
       timeText = GameObject.Find("Time").GetComponent<TMP_Text>();
+    
+      timeUpText = GameObject.Find("TimeUp").GetComponent<TMP_Text>();
+      timeUpObj = GameObject.Find("TimeUp");
+      timeUpObj.SetActive(false);
     } else {
       Cursor.visible = true;
+ 
     }
   }
 
@@ -62,13 +74,29 @@ public class GameManager: MonoBehaviour {
         } else {
           timeText.text = "0";
           Debug.Log("End Game");
+          // Start Coroutine
           gamePlaying = false;
-          sceneController.LoadGameOver();
+          //
+          StartCoroutine(ShowTimeIsUp());
         }
       }
+
+      //Handle Quit game 
+      if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            QuitGame();
+        }
     }
 
   }
+
+    IEnumerator ShowTimeIsUp()
+    {
+       timeUpObj.SetActive(true);
+       EventManager.TriggerEvent(AudioEventName.PlayTimeIsUp);
+        yield return new WaitForSeconds(3); 
+        sceneController.LoadGameOver();   
+    }
 
    void Raycast() {
     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -101,15 +129,18 @@ public class GameManager: MonoBehaviour {
   public void EatFood(int score = 50, float time = 5) { 
     timeRemaining += time;
     updateScore(score);
+    EventManager.TriggerEvent(AudioEventName.PlayDing);
   }
 
   void updateTime(float newTime) {
     timeText.text = "Time Left:" + "\n" + newTime.ToString("0.00");
+    
   }
 
   void updateScore(int points) {
     score += points;
     scoreText.text = "Score:" + "\n" + score.ToString();
+   
   }
 
   public void StartGame(){

@@ -22,7 +22,7 @@ public class Gullet : MonoBehaviour
 
             if (other.tag == "Trash") {
                 Destroy(other.gameObject);
-                Debug.Log("VICTORY SCREECH");
+                Debug.Log("UGH VOM");
                 EventManager.TriggerEvent(AudioEventName.PlayVom);
                 parts.Play();
             }
